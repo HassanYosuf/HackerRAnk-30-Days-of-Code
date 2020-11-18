@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        
+        for(int i=1;i<=t;i++)
+        {
+            int temp = sc.nextInt();
+            if(isPrime(temp))
+                System.out.println("Prime");
+            else
+                System.out.println("Not prime");
+        }
+    }
+    
+       public static boolean isPrime(int num) {
+           if (num <= 1) {
+               return false;
+           }
+           for (int i = 2; i <= Math.sqrt(num); i++) {
+               if (num % i == 0) {
+                   return false;
+               }
+           }
+           return true;
+    }
+}
